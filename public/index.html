@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>taskR</title>
+<link rel='stylesheet' href='stylesheets/style.css' />
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <div class="left">
+            <button class="btn success" id="btnAddTask">New Task</button>
+        </div>
+        <div class="right">
+            <select class="styleSwitcher">
+            <option value="dark">Dark</option>
+            <option value="Light">Light</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<section class="sort">
+    <h2>Sorter</h2>
+    <button class="btn default">Sort by due</button>
+    <button class="btn default">Sort by created</button>
+    <button class="btn default">Sort by priority</button>
+    <button class="btn default">Show finished</button>
+</section>
+
+
+
+<main id="containerTasks"></main>
+
+
+<script id="task-list-template" type="text/x-handlebars-template">
+    {{#each task}}
+    <li class="liItem">
+        <div>
+            <label for="checkBox"><input id="checkBox" type="checkbox"><span class="date">{{date}}</span> <span class="title">{{title}}</span>
+            <span class="description">{{description}}</span><button class="btn info" data-edit-btn-{{task.id}}>Edit</button></label>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<!-- [geh]: scripts wurden falsch referenziert:
+  Sie befinden sich im Verzeichnis ./js
+  Der Browser kann nicht auf den Root-Server-Folder /JS zugreifen; dieser wird von node.js nicht publiziert (siehe index.mjs).
+-->
+<script src="js/array.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/handlebars.min.js"></script>
+<script type="module" src="js/data.js"></script>
+<script type="module" src="js/model.js"></script>
+<script type="module" src="js/tasks.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>taskR</title>
+    <link rel='stylesheet' href='stylesheets/style.css' />
+
+
+</head>
+<body>
+<header>
+    <label for="styleSwitcher">Style</label>
+    <select id="styleSwitcher">
+        <option value="dark">Dark</option>
+        <option value="Light">Light</option>
+    </select>
+</header>
+
+
+<main>
+
+    <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" value="add name" id="name"><br>
+        <label for="description">Description</label>
+        <input type="text" value="add description" id="description">
+        <label for="date">Date</label>
+        <input type="date" id="date">
+    </form>
+    <input type="button" class="btn success" value="send" id="createTask">
+    <input type="button" class="btn danger cancel" value="Cancel" id="cancelEdit">
+</main>
+
+<!-- scripts immer kurz vor dem </body> platzieren-->
+<script src="js/array.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/handlebars.min.js"></script>
+<script type="module" src="js/data.js"></script>
+<script type="module" src="js/model.js"></script>
+<script type="module" src="js/edit.js"></script>
+
+</body>
+</html>
